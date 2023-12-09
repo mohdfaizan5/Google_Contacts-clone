@@ -4,14 +4,16 @@ const app = express()
 
 
 // Importing Controllers
-const {addContact, getAllContacts} = require('../controllers/userController')
+const { addContact, getAllContacts } = require('../controllers/userController')
 
 // Seting up template engine
 app.set('view engine', 'ejs')
 
 
 // get all contacts
-route.get("/", getAllContacts)
+route.get("/", (req, res) => res.render('index'))
+// get all contacts
+route.get("/all", getAllContacts)
 
 // Add new contact
 route.post('/add', addContact)

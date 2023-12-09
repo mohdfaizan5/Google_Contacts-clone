@@ -2,12 +2,11 @@
 const UserModel = require('../models/userModel')
 
 
-const getAllContacts = async(request, response) => {
+const getAllContacts = async(req, res) => {
 
   const allContacts = await UserModel.find()
-  console.log(allContacts)
 
-  response.render('index')
+  res.status(200).json(allContacts)
 
 }
 

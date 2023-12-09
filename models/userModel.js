@@ -3,18 +3,18 @@ const mongoose = require('mongoose')
 const userModel = mongoose.Schema(
   {
     name: {
-      type: String,
-      required: [true, "This is the message will be shown"]
+      first: String,
+      last: String
     },
     phone: {
-      type: Number,
+      type: String,
       required: true
     },
-    email: String
+    // email: String
   },
   // We can also create a timestamp
   {
-    timestamps:true
+    timestamps: true
   }
 )
 
